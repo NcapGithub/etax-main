@@ -27,7 +27,7 @@
                 <label class="sms-top-text">เลขที่สัญญา &nbsp </label><label class="sms-loan-text">{{ this.loanId }} </label><br />
               </div>
               <div class="text-center" v-if="this.documentType === 'encbyearly'">
-                <label class="sms-top-text">{{this.documentNcbName}}</label><br />
+                <label class="sms-top-text">{{this.documentNcbYearlyName + this.yaerly }}</label><br />
                 <label class="sms-top-text">เลขที่สัญญา  &nbsp </label><label class="sms-loan-text">{{ this.loanId }} </label><br />
               </div>
             </div>
@@ -106,9 +106,11 @@ export default ({
       classValidInput: "id-card-passcode",
       documentname:"ใบแจ้งยอดบัญชี/ใบเสร็จอิเล็กทรอนิกส์",
       documentNcbName:"หนังสือแจ้งการส่งข้อมูลให้แก่บริษัทข้อมูลเครดิตแห่งชาติ จำกัดทางอิเล็กทรอนิกส์",
+      documentNcbYearlyName:"หนังสือแจ้งข้อมูลรายปี ให้กับบริษัทข้อมูลเครดิตแห่งชาติจำกัดแบบอิเล็กทรอนิกส์ ประจำปี ",
       loading: false,
       isMobileDevice: false,
-      source2: ""
+      source2: "",
+      yaerly: ''
     }
   },
   mounted() {
@@ -116,6 +118,8 @@ export default ({
     this.fileName = this.$route.query.fileName,
     this.loanId = this.$route.query.loanId,
     this.carLicenseNumber = this.$route.query.carLicenseNumber
+    this.documentType = this.$route.query.documentType
+    this.getYaer()
   },
   watch: {
     idcard(newData, oldData) {
@@ -134,6 +138,10 @@ export default ({
         this.loading = true
         this.checkBirthDate(this)
       }
+    },
+    getYaer(){
+      let dt = new Date();
+      this.yaerly = dt.getUTCFullYear() + 542
     },
     checkBirthDate({$axios}){
       // $axios.$get("https://prod-api.nextmoney.co.th/APIEtax/api/EApplication/user-details?loanId=" + this.loanId)
