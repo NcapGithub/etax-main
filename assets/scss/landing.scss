@@ -1,0 +1,27 @@
+.btn {
+    padding: 6px;
+    background: radial-gradient(129.77% 129.77% at 48.82% -19.51%, #6D83C7 0%, rgba(65, 92, 177, 0.97) 32.18%, rgba(39, 68, 157, 0.92) 60.19%, rgba(4, 38, 143, 0.88) 95.35%);
+    border-radius: 60px;
+    box-shadow: 16px 8px 18px rgba(33, 73, 198, 0.26), inset 14px 12px 13px -4px rgba(255, 255, 255, 0.23);
+    border: none;
+    min-width: 250px;
+    @include transition (all .2s);
+    &:hover,
+    &:focus {
+        @include opacity(.6);
+    }
+    &:disabled {
+        background: radial-gradient(129.77% 129.77% at 48.82% -19.51%, #AEAEAE 0%, #959595 32.18%, #8B8B8B 60.19%, #838383 71.88%, #817F7F 95.35%);
+        box-shadow: 16px 8px 18px #D6D6D6, inset 14px 12px 13px -4px rgba(255, 255, 255, 0.23);
+    }
+    &.bg-yellow {
+        background: $yellow;
+    }
+}
+
+.list-group-item.expand {
+    background: url(../icons/chevron-down-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center right 5px;
+    background-size: 20px;
+}

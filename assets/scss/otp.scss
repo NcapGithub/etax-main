@@ -1,0 +1,9 @@
+#otp {
+    gap: 6px;
+    margin-top: 90px;
+    > input {
+        width: 50px;
+        border: none;
+        border-bottom: 3px solid $yellow;
+    }
+}

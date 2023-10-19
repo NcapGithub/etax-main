@@ -1,0 +1,25 @@
+@mixin transition( $duration ) {
+    -webkit-transition: $duration;
+       -moz-transition: $duration;
+        -ms-transition: $duration;
+            transition: $duration;
+}
+@mixin transform( $value ) {
+    -webkit-transform: $value;
+       -moz-transform: $value;
+        -ms-transform: $value;
+            transform: $value;
+}
+@mixin opacity( $value ) {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$value+")";  // Theoretically for IE 8 & 9 (more valid)
+    filter: alpha(opactiy=$value);   // For IE8 and earlier versions
+    -moz-opacity: $value;
+    -khtml-opacity: $value;
+    opacity: $value;
+}
+@mixin transform-origin( $value ) {
+    -webkit-transform-origin: $value;
+       -moz-transform-origin: $value;
+        -ms-transform-origin: $value;
+            transform-origin: $value;
+}

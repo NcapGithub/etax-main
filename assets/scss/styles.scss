@@ -1,0 +1,199 @@
+@import './fonts';
+@import './variables';
+@import './mixins';
+@import './typography.scss';
+
+@import './landing.scss';
+@import './otp.scss';
+
+html,
+body {
+    height: auto !important;
+}
+
+.bg-blue {
+    background: $primary-color;
+}
+.bg-white-grey {
+    background: #F5F5F5;
+}
+
+.text-blue {
+    color: $primary-color;
+}
+.text-soft-blue {
+    color: $soft-blue;
+}
+.text-blue-600 {
+    color: $blue-600;
+}
+.text-red {
+    color: $red;
+}
+.text-yellow {
+    color: $yellow;
+}
+.text-black {
+    color: $black;
+}
+.text-grey {
+    color: $grey-font-color;
+}
+.text-dark-grey {
+    color: $dark-grey;
+}
+
+.lg-font-size {
+    font-size: $lg-font-size;
+}
+.xl-font-size {
+    font-size: $xl-font-size;
+}
+.md-font-size {
+    font-size: $default-font-size;
+}
+
+.container {
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+#search {
+    border-radius: 10px;
+    border: 2px solid $soft-blue;
+    padding: 10px 20px;
+    background-image: url(../icons/search-icon.svg);
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+}
+#search::placeholder {
+    color: $soft-blue;
+}
+
+.card {
+    box-shadow: 0 2px 2px 0 rgba($color: #000000, $alpha: .25);
+    .list-group-item {
+        border-color: #E6E6E6;
+    }
+}
+
+.btn-view-detail {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: 1px solid $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    background: none;
+    @include transition(all .2s);
+    &:hover {
+        @include opacity (.75);
+    }
+    > img {
+        width: 10px;
+    }
+}
+
+.material-textfield {
+position: relative;  
+    label {
+        position: absolute;
+        font-size: 1rem;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #FFF;
+        color: $grey-50;
+        padding: 0 0.3rem;
+        margin: 0 0.5rem;
+        transition: .1s ease-out;
+        transform-origin: left top;
+        pointer-events: none;
+    }
+    input {
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, 0.22);
+        border-radius: 5px;  
+        padding: .5rem 0.7rem;
+        color: $grey-50;
+        transition: 0.1s ease-out;
+    }
+    input:focus {
+        border-color: $primary-color;  
+    }
+    input:focus + label {
+        color: $primary-color;
+        top: 0;
+        transform: translateY(-50%) scale(.9);
+    }
+    input:not(:placeholder-shown) + label {
+        top: 0;
+        transform: translateY(-50%) scale(.9);
+    }
+    select {
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, .22);
+        border-radius: 5px;
+        padding: .5rem .7rem;
+        color: #817f7f;
+        transition: .1s ease-out
+    }
+    select:focus {
+        border-color: #23409a
+    }
+    select:focus+label {
+        color: #23409a;
+        top: 0;
+        transform: translateY(-50%) scale(0.9)
+    }
+    select:focus+label {
+        color: #23409a;
+        top: 0;
+        transform: translateY(-50%) scale(0.9)
+    }
+    select:not(:placeholder-shown)+label {
+        top: 0;
+        transform: translateY(-50%) scale(0.9)
+    }
+}
+
+.valid-input {
+    position: relative;  
+    label {
+        position: absolute;
+        font-size: 1rem;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #FFF;
+        color: $grey-50;
+        padding: 0 0.3rem;
+        margin: 0 0.5rem;
+        transition: .1s ease-out;
+        transform-origin: left top;
+        pointer-events: none;
+    }
+    input {
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, 0.22);
+        border-radius: 5px;  
+        padding: .5rem 0.7rem;
+        color: red;
+        transition: 0.1s ease-out;
+    }
+    input:focus {
+        border-color: $primary-color;  
+    }
+    input:focus + label {
+        color: $primary-color;
+        top: 0;
+        transform: translateY(-50%) scale(.9);
+    }
+    input:not(:placeholder-shown) + label {
+        top: 0;
+        transform: translateY(-50%) scale(.9);
+    }
+    
+}

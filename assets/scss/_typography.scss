@@ -1,0 +1,46 @@
+@import './variables';
+
+*:focus,
+*:active {
+	outline: none !important;
+}
+
+body {
+    text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: $default-font-size;
+    color: $grey-font-color;
+}
+
+body,
+span,
+p,
+a,
+input,
+textarea,
+label {
+    font-family: $primary-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: $primary-font;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+a {
+	text-decoration: none;
+    color: $primary-color;
+    @include transition(all .2s);
+}
+
+th {
+    color: $primary-color;
+}
