@@ -26,6 +26,10 @@
                 <label class="sms-top-text">{{this.documentNcbName}}</label><br />
                 <label class="sms-top-text">เลขที่สัญญา &nbsp </label><label class="sms-loan-text">{{ this.loanId }} </label><br />
               </div>
+              <div class="text-center" v-if="this.documentType === 'encbyearly'">
+                <label class="sms-top-text">{{this.documentNcbName}}</label><br />
+                <label class="sms-top-text">เลขที่สัญญา  &nbsp </label><label class="sms-loan-text">{{ this.loanId }} </label><br />
+              </div>
             </div>
           </div>
           <div class="center-body-flex">
@@ -132,7 +136,8 @@ export default ({
       }
     },
     checkBirthDate({$axios}){
-      $axios.$get("https://prod-api.nextmoney.co.th/APIEtax/api/EApplication/user-details?loanId=" + this.loanId)
+      // $axios.$get("https://prod-api.nextmoney.co.th/APIEtax/api/EApplication/user-details?loanId=" + this.loanId)
+      $axios.$get("https://uat-api.nextmoney.co.th/APIEtax/api/EApplication/user-details?loanId=" + this.loanId)
         .then((response) => {
           if(response.length === 0){
             this.showValid = true
